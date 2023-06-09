@@ -1,0 +1,47 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Typescript",
+      "type": "node",
+      "request": "launch",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${file}",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "restart": true,
+      "outFiles": [
+        "${workspaceFolder}/**/*.js"
+      ]
+    },
+    {
+      "name": "Web app",
+      "type": "chrome",
+      "request": "launch",
+      "url": "file:///${workspaceFolder}/web-app/index.html",
+      "webRoot": "${workspaceFolder}/web-app"
+    },
+    {
+      "name": "Frontend",
+      "type": "node",
+      "preLaunchTask": "run server",
+      "request": "launch",
+      "program": "${file}",
+      "restart": true,
+      "outFiles": [
+        "${workspaceFolder}/**/*.js"
+      ]
+    },
+    {
+      "name": "Backend",
+      "type": "node",
+      "request": "launch",
+      "program": "${file}",
+      "restart": true,
+      "outFiles": [
+        "${workspaceFolder}/**/*.js"
+      ]
+    },
+  ]
+}
